@@ -7,3 +7,7 @@ Note that one of the dependencies, lxml, also requires libxml2 and libxslt to be
 ## Installation
 
     pip3 install snscrape
+
+## Running the code
+
+    python3 scraper.py
