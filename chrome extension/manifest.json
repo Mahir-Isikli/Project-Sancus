@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "name": "Sancus",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {},
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["side-panel.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["popup.html"],
+      "matches": ["https://*/*", "http://*/*"]
+    }
+  ]
+}
