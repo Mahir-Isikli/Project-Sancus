@@ -1,0 +1,34 @@
+
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400,600&display=swap");
+
+
+/* center in the viewport */
+body {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: hsl(230, 29%, 19%);
+  color: hsl(184, 30%, 70%);
+}
+/* cap the width of the visualization */
+svg {
+  width: 90vw;
+  max-width: 900px;
+}
+svg text {
+  font-family: "IBM Plex Mono", monospace;
+  fill: currentColor;
+  text-shadow: 0 0 1px hsla(0, 0%, 0%, 0.25);
+  letter-spacing: 0.01rem;
+}
+
+/* animation for the path elements included through the tooltip
+! the offset needs to match the length of a dash and an empty space to avoid jumping from state to state
+stroke-dasharray: 7 4; --> stroke-dashoffset: 11;
+*/
+@keyframes dashOffset {
+  to {
+    stroke-dashoffset: -11;
+  }
+}
