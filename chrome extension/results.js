@@ -5,21 +5,26 @@ the idea is to fabricate an array of data points with random percentage and coun
 
 const legend = [
   {
-    name: 'Purple',
-    color: 'hsl(259, 48%, 55%)',
+    name: 'You',
+    color: 'hsl(28, 99%, 64%)',
   },
   {
-    name: 'Green',
-    color: 'hsl(137, 68%, 61%)',
+    name: 'Hitler',
+    color: 'hsl(239, 100%, 50%)',
   },
   {
-    name: 'Yellow',
-    color: 'hsl(57, 96%, 64%)',
+    name: 'Stalin',
+    color: 'hsl(239, 100%, 50%)',
   },
   {
-    name: 'Orange',
-    color: 'hsl(0, 99%, 71%)',
+    name: 'Ayn Rand',
+    color: 'hsl(239, 100%, 50%)',
   },
+  {
+    name: 'Bernie Sanders',
+    color: 'hsl(239, 100%, 50%)',
+  },
+
 ];
 
 // utility functions
@@ -33,26 +38,23 @@ const percentages = {
 };
 const counts = {
   min: 0,
-  max: 10000,
+  max: 100,
 };
 
 console.log("Hello World")
 
-
+const p = [50, 90, 90, 10, 20]
+const c = [50, 70, 10, 90, 20]
+var index = 0
 // function called to fabricate random data points
 const randomDataPoint = () => {
   // compute a random percentage and count
-  const percentage = randomBetween(percentages.min, percentages.max);
-  const count = randomBetween(counts.min, counts.max);
+  const percentage = p[index];
+  const count = c[index];
 
-  // call the function once more if the data point were to be located in the bottom right corner of the viz
-  // this to avoid overlaps with the legend
-  if (percentage < 20 && count > 7000) {
-    return randomDataPoint();
-  }
   // retrieve an item from the legend array
-  const item = randomItem(legend);
-
+  const item = legend[index];
+  index += 1
   /* return an object marrying the name and color with the percentage and user count */
   return Object.assign({}, item, {
     percentage,
@@ -61,7 +63,7 @@ const randomDataPoint = () => {
 };
 
 // number of data points
-const dataPoints = 15;
+const dataPoints = 5;
 // create an array of data points leveraging the utility functions
 const data = Array(dataPoints).fill('').map(randomDataPoint);
 
@@ -104,9 +106,9 @@ const percentageScale = d3
 // position four rectangles and text elements to divvy up the larger shape in four sections
 const quad = [
   'Communist',
-  'Adopt',
-  'Avoid',
-  'Analyze',
+  'Nationalist',
+  'Socialist',
+  'Libertarian',
 ];
 
 const quadrantsGroup = group
@@ -154,36 +156,11 @@ const legendGroup = group
   .attr('class', 'legend')
   .attr('transform', `translate(${countScale(8500)} ${percentageScale(16)})`);
 
-// separate the groups vertically
-const legendItems = legendGroup
-  .selectAll('g.legend-item')
-  .data(legend)
-  .enter()
-  .append('g')
-  .attr('class', 'legend-item')
-  .attr('transform', (d, i) => `translate(0 ${i * 15})`);
-
-// for each group add a colored circle and the matching text
-legendItems
-  .append('circle')
-  .attr('cx', 0)
-  .attr('cy', 0)
-  .attr('r', 4)
-  .attr('fill', ({color}) => color);
-
-legendItems
-  .append('text')
-  .attr('x', 12)
-  .attr('y', 0)
-  .attr('dominant-baseline', 'middle')
-  .text(d => d.name)
-  .style('font-size', '0.5rem')
-  .style('letter-spacing', '0.05rem');
 
 // axes
 const countAxis = d3
   .axisBottom(countScale)
-  .tickFormat(d => d);
+  .tickFormat(d => `${d}%`);
 
 const percentageAxis = d3
   .axisLeft(percentageScale)
@@ -260,7 +237,7 @@ d3
   .append('text')
   .attr('x', 0)
   .attr('y', 0)
-  .text('User Count')
+  .text('Economy')
   .attr('text-anchor', 'middle');
 
 d3
@@ -274,7 +251,7 @@ d3
   .append('text')
   .attr('x', 0)
   .attr('y', 0)
-  .text('Satisfaction Percentage')
+  .text('Individual Freedom')
   .attr('text-anchor', 'middle')
   .attr('dominant-baseline', 'hanging')
   .attr('transform', 'rotate(-90)');
@@ -306,18 +283,19 @@ dataPointsGroup
   .append('circle')
   .attr('cx', 0)
   .attr('cy', 0)
-  .attr('r', 5)
+  .attr('r', 7.5)
   .attr('fill', ({color}) => color);
 
 // labels describing the circle elements
 dataPointsGroup
   .append('text')
-  .attr('x', 8)
+  .attr('x', 15)
   .attr('y', 0)
   .attr('class', 'name')
-  .text(({name}, i) => `${name} ${i}`)
+  .text(({name}, i) => `${name}`)
   .attr('dominant-baseline', 'central')
-  .style('font-size', '0.55rem')
+  .style('font-size', '0.6rem')
+  .style('font-weight', 'bold')
   .style('letter-spacing', '0.05rem')
   .style('pointer-events', 'none');
 

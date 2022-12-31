@@ -14,7 +14,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["popup.html"],
+      "resources": ["profile.html"],
       "matches": ["https://*/*", "http://*/*"]
     }
   ]
