@@ -38,14 +38,33 @@ stroke-dasharray: 7 4; --> stroke-dashoffset: 11;
   text-align: center;
 }
 
-
 ul {
   list-style: none;
   columns: 2;
+  padding: 0;
+  text-align: left;
 }
 
 
-.darkTriade h1 {
-  margin-top: 10rem;
-  margin-bottom: 5rem;
+h1 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.darkTriade .flex {
+  display: flex;
+  width: 100%;
+  flex-basis: fit-content;
+  justify-content: end;
+  align-items: center;
+}
+
+.darkTriade .left {
+  width: 80%;
+  text-align: left;
+}
+
+.darkTriade .right {
+  width: 20%;
+  text-align: right;
 }

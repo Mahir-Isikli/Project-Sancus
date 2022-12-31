@@ -69,7 +69,7 @@ const counts = {
 
 console.log("Hello World on results.js")
 
-const p = [50, 90, 90, 10, 20]
+const p = [50, 90, 90, 10, 15]
 const c = [50, 70, 10, 90, 20]
 var index = 0
 // function called to fabricate random data points
