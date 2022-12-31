@@ -17,8 +17,5 @@
       "resources": ["popup.html"],
       "matches": ["https://*/*", "http://*/*"]
     }
-  ],
-  "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self' 'unsafe-inline' https://d3js.org/d3.v7.min.js;"
-  }
+  ]
 }
