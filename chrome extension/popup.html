@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+    <script type="text/javascript" >
+    function logSubmit(event) {
+      log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
+      event.preventDefault();
+    }
+    
+    const form = document.getElementById("form");
+    const log = document.getElementById("log");
+    form.addEventListener("submit", logSubmit);
+    console.log("test");
+    </script>
     <title>Project Sancus</title>
     <meta charset="UTF-8">
 
@@ -14,11 +25,14 @@
         <div class="title">Sancus</div>
         <div class="subtitle">Your Twitter Political Measure Tool</div>
         <div class="input-container ic1">
-          <input id="firstname" class="input" type="text" placeholder=" " />
-          <div class="cut"></div>
-          <label for="firstname" class="placeholder">Twitter Username</label>
+          
         </div>
-        <button type="text" class="submit">Generate Score</button>
+        <form id="form">
+          <label>user name <input type="text" /></label>
+          <br /><br />
+          <button type="submit">Submit form</button>
+        </form>
+        <p id="log"></p>
       </div>
     </p>
 
