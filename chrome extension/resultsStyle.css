@@ -32,3 +32,20 @@ stroke-dasharray: 7 4; --> stroke-dashoffset: 11;
     stroke-dashoffset: -11;
   }
 }
+
+.flex {
+  width: 75%;
+  text-align: center;
+}
+
+
+ul {
+  list-style: none;
+  columns: 2;
+}
+
+
+.darkTriade h1 {
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+}

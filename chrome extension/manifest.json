@@ -9,7 +9,7 @@
   "content_scripts": [
     {
       "matches": ["https://*/*", "http://*/*"],
-      "js": ["side-panel.js"]
+      "js": ["side-panel.js", "popup.js", "https://d3js.org/d3.v7.min.js"]
     }
   ],
   "web_accessible_resources": [
