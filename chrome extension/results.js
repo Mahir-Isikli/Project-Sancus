@@ -3,6 +3,32 @@ starting from an object describing the possible categories and matching colors
 the idea is to fabricate an array of data points with random percentage and count values
 */
 
+console.log("results.js");
+document.getElementById("machiavellinismScore").innerHTML = calcEmojis(10);
+document.getElementById("narcisismScore").innerHTML = calcEmojis(2);
+document.getElementById("psychopathyScore").innerHTML = calcEmojis(6);
+
+function calcEmojis(score) {
+  var colorEmoji;
+  var baseColor = "⬜️";
+  var barChart = "";
+  if(score<4){
+    colorEmoji = "🟩";
+  }else if (score<=7) {
+    colorEmoji = "🟨";
+  }else{
+    colorEmoji = "🟥";
+  }
+  for (a=0 ; a<score ; a++){
+    barChart = barChart + colorEmoji;
+  }
+  for (b=0 ; b<(10-score) ; b++){
+    barChart = barChart + baseColor;
+  }
+  console.log("here is the barChart ", barChart);
+  return barChart;
+}
+
 const legend = [
   {
     name: 'Purple',
@@ -36,7 +62,7 @@ const counts = {
   max: 10000,
 };
 
-console.log("Hello World")
+console.log("Hello World on results.js")
 
 
 // function called to fabricate random data points
@@ -479,5 +505,3 @@ dataPointsGroup
       .attr('opacity', 0)
       .remove();
   });
-
-  console.log("Hello World")
