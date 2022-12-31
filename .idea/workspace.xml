@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a2a90f0-8483-44f4-a8b4-ff71e309109e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/chrome extension/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chrome extension/background.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chrome extension/popup.html" beforeDir="false" afterPath="$PROJECT_DIR$/chrome extension/popup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chrome extension/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/chrome extension/popup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chrome extension/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/chrome extension/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chrome extension/results.js" beforeDir="false" afterPath="$PROJECT_DIR$/chrome extension/profile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

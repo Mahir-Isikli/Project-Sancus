@@ -4,9 +4,19 @@ the idea is to fabricate an array of data points with random percentage and coun
 */
 
 console.log("results.js");
-document.getElementById("machiavellinismScore").innerHTML = calcEmojis(10);
-document.getElementById("narcisismScore").innerHTML = calcEmojis(2);
-document.getElementById("psychopathyScore").innerHTML = calcEmojis(6);
+console.log("pr", global_state)
+
+let params = new URLSearchParams(window.location.search);
+let ma = params.get('m') // 'chrome-instant'
+let na = params.get('n') // 'mdn query string'
+let ps = params.get('p') // true
+let au = params.get('a') // 'chrome-instant'
+let ri = params.get('r') // 'mdn query string'
+
+
+document.getElementById("machiavellinismScore").innerHTML = calcEmojis(Math.floor(ma*10));
+document.getElementById("narcisismScore").innerHTML = calcEmojis(Math.floor(na*10));
+document.getElementById("psychopathyScore").innerHTML = calcEmojis(Math.floor(ps*10));
 
 function calcEmojis(score) {
   var colorEmoji;
@@ -69,8 +79,9 @@ const counts = {
 
 console.log("Hello World on results.js")
 
-const p = [50, 90, 90, 10, 15]
-const c = [50, 70, 10, 90, 20]
+const p = [Math.floor(au*100), 90, 90, 10, 15]
+const c = [Math.floor(ri*100), 70, 10, 90, 20]
+console.log(p)
 var index = 0
 // function called to fabricate random data points
 const randomDataPoint = () => {
